@@ -89,6 +89,36 @@
             z-index: 1000;
         }
 
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            border: 2px solid #4b2cc7;
+            color: #4b2cc7;
+            padding: 12px 22px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        .btn-outline:hover {
+            background: #4b2cc7;
+            color: white;
+        }
+
         .logo {
             font-size: 34px;
             font-weight: 700;
@@ -133,57 +163,22 @@
 
         /* HERO */
         .hero {
-            padding: 90px 8%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 60px;
+            padding: 60px 8%;
             background: white;
-        }
-
-        .hero-content h4 {
-            color: #18dc89;
-            font-size: 18px;
-            margin-bottom: 18px;
-        }
-
-        .hero-content h1 {
-            font-size: 58px;
-            line-height: 1.1;
-            margin-bottom: 24px;
-        }
-
-        .hero-content h1 span {
-            background: linear-gradient(90deg, #7b2ff7, #18dc89);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-content p {
-            color: #666;
-            line-height: 1.9;
-            margin-bottom: 35px;
-            font-size: 17px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
         }
 
         /* POSTER */
         .poster {
             background: linear-gradient(145deg, #4b2cc7, #18dc89);
             border-radius: 30px;
-            padding: 45px;
+            padding: 55px 60px;
             color: white;
             position: relative;
             overflow: hidden;
-            min-height: 500px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: flex-start;
         }
 
         .poster::before {
@@ -266,6 +261,15 @@
         }
 
         /* PROGRAM */
+        .program-desc {
+            color: #555;
+            line-height: 1.9;
+            font-size: 16px;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -428,16 +432,12 @@
 
         /* RESPONSIVE */
         @media(max-width:992px) {
-            .hero {
-                grid-template-columns: 1fr;
+            .nav-buttons {
+                gap: 8px;
             }
-
-            .hero-content h1 {
-                font-size: 44px;
-            }
-
-            .poster {
-                min-height: auto;
+            .btn, .btn-outline {
+                padding: 10px 16px;
+                font-size: 13px;
             }
         }
 
@@ -476,11 +476,11 @@
 <body>
 
     <!-- TOPBAR -->
-    <div class="topbar">
+    <div class="topbar" id="home">
 
         <div class="top-left">
             <i class="fa-solid fa-envelope"></i>
-            <a href="mailto:support@msquare.pro">support@msquare.pro</a>
+            <a href="mailto:gpinna@msquare.pro">gpinna@msquare.pro</a>
         </div>
 
         <div class="top-right">
@@ -499,77 +499,32 @@
 
     <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="logo">App<span>Webinar</span></div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#program">Program</a>
-            <a href="#contact">Contact</a>
-            <a href="#faq">FAQ</a>
+        <div class="nav-left">
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#contact">Contact</a>
+                <a href="#faq">FAQ</a>
+            </div>
         </div>
-        <a href="https://wkf.ms/3RpFDzT" class="btn" target="_blank">Register Now</a>
+        <div class="nav-buttons">
+            <a href="https://us06web.zoom.us/j/81491033151?pwd=WS37Rmp7AB6MuTEA7hlbadfdUYEInE.1" class="btn" target="_blank">Join us on Jun 9</a>
+            <a href="https://www.skool.com/masterai" class="btn" target="_blank">Join our Skool</a>
+            <a href="https://wkf.ms/3RpFDzT" class="btn" target="_blank">Register Now</a>
+        </div>
     </nav>
 
     <!-- HERO -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h4>🚀 LinkedIn Live Webinar</h4>
-            <h1>Master <span>Modern App Development</span> in 2026</h1>
-            <p>Join our exclusive LinkedIn webinar and learn how modern businesses are building scalable mobile and web
-                applications using AI tools, automation, APIs, and the latest development frameworks.</p>
-            <div class="hero-buttons">
-                <a href="https://us06web.zoom.us/j/81491033151?pwd=WS37Rmp7AB6MuTEA7hlbadfdUYEInE.1" class="btn" target="_blank">Join Webinar</a>
-                <a href="https://wkf.ms/3RpFDzT" class="btn" target="_blank">Register Form</a>
-            </div>
-        </div>
-
-        <!-- POSTER -->
-        <div class="poster">
-            <h2>Build Apps Faster with AI & Automation</h2>
-            <p>Learn app architecture, backend integration, UI/UX trends, AI-assisted coding, deployment strategies,
-                and scaling techniques from industry experts.</p>
-            <div class="date"><a href="https://us06web.zoom.us/j/81491033151?pwd=WS37Rmp7AB6MuTEA7hlbadfdUYEInE.1" target="_blank">📅 9 June 2026 | 7:30 PM IST</a></div>
-        </div>
-    </section>
-
-    <!-- PROGRAM -->
-    <section class="section" id="program">
-        <div class="section-title">
-            <h2>About The Program</h2>
-            <p>This webinar is designed for developers, startup founders, freelancers, and tech enthusiasts who want to
-                learn practical app development strategies used by modern tech companies.</p>
-        </div>
+    
+   
         <div class="program-image">
             <img src="ChatGPT Image May 28, 2026, 12_12_46 PM.png" alt="Co-Build Your App With Us - MSquare Webinar Poster" />
         </div>
-        <div class="cards">
-            <div class="card">
-                <h3>📱 Mobile App Development</h3>
-                <p>Learn how to create scalable Android and iOS applications using modern frameworks and AI-powered
-                    workflows.</p>
-            </div>
-            <div class="card">
-                <h3>⚡ Automation & APIs</h3>
-                <p>Discover how APIs and automation tools can accelerate development and improve app efficiency.</p>
-            </div>
-            <div class="card">
-                <h3>🤖 AI in Development</h3>
-                <p>Explore AI coding assistants, GPT integrations, workflow automation, and modern AI-powered products.</p>
-            </div>
-        </div>
+        <p class="program-desc">Ideas are everywhere; finished products are rare. If your next big app idea is stuck in a doc instead of trending on Product Hunt, this program is for you. We combine solo-builder speed with team-grade infrastructure to help you go from prototype to paying customers fast. Using the latest AI-native tools (Claude Code, Lovable, Bolt, and more), we accelerate development so you can ship meaningful features in hours, then scale them with repeatable processes for launch, support, and monetization. At MSquare Automation Solutions we already build custom apps for clients starting at $5,000+. This initiative teaches you the same playbook so you can monetize your ideas and ship with confidence.</p>
+
     </section>
 
     <!-- LINKS -->
-    <section class="section">
-        <div class="link-box">
-            <h2>Access Webinar Resources</h2>
-            <p>Register for the webinar, join the LinkedIn live session, and access additional resources through the
-                links below.</p>
-            <div class="link-buttons">
-                <a href="https://wkf.ms/3RpFDzT" target="_blank">🔗 Registration Form</a>
-                <a href="#">🎥 Webinar Link</a>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- CONTACT -->
     <section class="section" id="contact">
